@@ -1,0 +1,98 @@
+// Grid Variables
+// $xxxl: 1900px !default;
+$xxxl: 1750px !default;
+$xxl: 1650px !default;
+$xl: 1374px !default;
+$lg: 1200px !default;
+$md: 992px !default;
+$sm: 768px !default;
+$xs: 576px !default;
+$grid: 12;
+$grid-push: $grid;
+$grid-pull: $grid;
+$grid-offset: $grid;
+$fluid : 100%;
+
+// Font Variables
+$Primary-Font: 'MuseoSansRounded', Arial,sans-serif;
+$font-weight-100: 100;
+$font-weight-300: 300;
+$font-weight-500: 500;
+$font-weight-700: 700;
+$font-weight-900: 900;
+$font-weight-1000: 1000;
+
+
+
+// Basic Colours
+$white: #fff;
+$black: #000;
+$darkGray: #333;
+
+// Brand Colours
+$primaryColor: #EC3237;
+$secodaryColor: #FFEB00;
+$registerHoverBgClr:  linear-gradient(139.11deg, #F63715 0%, #F6D043 100%); 
+
+// Buttons
+$buttonRadius: 100px;
+$buttonTextTransform: inherit;
+$primaryBtnColor: #FFF;
+$primaryBtnBgColor: #F63715;
+$primaryBtnBgImg: none;
+$primaryBtnBorder: none;
+$primaryBtnBgColorHover: $registerHoverBgClr;
+$primaryBtnBgImgHover: #F63715;
+$primaryBtnBoxShadow: inset 5px 5px 10px 0 rgba(255,255,255,0.25), 0 5px 10px 0 rgba(250,61,87,0.2);
+$primaryBtnBoxShadowHover: 0 5px 10px 0 rgba(246,209,72,0.38);
+$primaryBtnColorHover: #FFF;
+
+$secondaryBtnColor: #ffffff;
+$secondaryBtnColorHover: #000;
+$secondaryBtnBgColor: #000;
+$secondaryBtnBgColorHover: #FFF;
+$secondaryBtnBorder: none;
+$secondaryBtnBorderHover: none;
+$secondaryBtnBoxShadowHover:  0 20px 20px 0 rgba(229,55,24,0.07);
+
+$teritaryBtnBgColor: #ffffff;
+$teritaryBtnColor: #EC3237;
+
+$teritaryOutlineBtnBgColor: #ffffff;
+$teritaryOutlineBtnColor: #000;
+$teritaryOutlineBorderColor: 2px solid #313131;
+$teritaryOutlineBtnBgColorHover: #ffffff;
+
+
+// Common styles
+$bodyColor: #333;
+$bodyBgColor: #FCFBF9;
+$commonLinkColor: #337ab7;
+$commonLinkHoverColor: #23527c;
+$commonHrEleBorderTop: #eeeeee;
+$commonListItemsLinkColor: #333;
+$commonListItemsLinkHoverColor: #EC3237;
+$commonListItemsParaLinkColor: #333;
+$commonListItemsParaLinkHoverColor: #EC3237;
+$commonListItemsOrderListLinkColor: #333;
+$commonListItemsOrderListLinkHoverColor: #EC3237;
+$commonListItemsUnorderLinkColor: #333;
+$commonListItemsUnorderLinkHoverColor: #EC3237;
+$commonRegistrationFooterMsgColor: #868686;
+$commonRegistrationFooterMsgLinkColor: #868686;
+$commonHeadingTitleColor: #000;
+$commonBannerBgColor: #F85B3F;
+$commonBannerTitleColor: #fff;
+$commonCntBlockBgColor: #FFF;
+$contactUsDescTextColor: inherit;
+
+// Site Loaders
+$primaryLoaderBorderColor: #EC3237;
+$primaryLoaderBgColor: #fff;
+$secondaryLoaderBorderColor: #fff;
+$secondaryLoaderBgColor: #EC3237;
+$transactionBetHistoryLoaderBorderColor: #fff;
+$transactionBetHistoryLoaderBgColor: #EC3237;
+$slotModalFunBtnLoaderBorderColor: #EC3237;
+$slotModalFunBtnLoaderBgColor: #fff;
+$depositLoaderBgColor: #fff;
