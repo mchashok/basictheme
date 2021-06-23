@@ -1,0 +1,232 @@
+[class^="custom-"]:before,
+[class*=" custom-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-icon_arrow_active .path1:before {
+  content: "\e900";
+}
+
+.custom-icon_arrow_active .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+}
+
+.custom-icon_arrow_active .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+}
+
+.custom-error_warning:before {
+  content: "\e903";
+}
+
+.custom-icon_arrow_inactive .path1:before {
+  content: "\e904";
+}
+
+.custom-icon_arrow_inactive .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+}
+
+.custom-icon_arrow_inactive .path3:before {
+  content: "\e906";
+  margin-left: -1em;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-award:before {
+  content: '\e800';
+}
+
+/* '' */
+.icon-badge_rng_certified:before {
+  content: '\e801';
+}
+
+/* '' */
+.icon-badge_ssl_certified:before {
+  content: '\e802';
+}
+
+/* '' */
+.icon-18plus:before {
+  content: '\e803';
+}
+
+/* '' */
+.icon-checkbox:before {
+  content: '\e804';
+}
+
+/* '' */
+.icon-icon-eye:before {
+  content: '\e807';
+}
+
+/* '' */
+.icon-dropdown-arrow:before {
+  content: '\e809';
+}
+
+/* '' */
+.icon-myaccount:before {
+  content: '\e80a';
+}
+
+/* '' */
+.icon-menu_icon_games:before {
+  content: '\e80b';
+}
+
+/* '' */
+.icon-menu_icon_hamburger:before {
+  content: '\e80c';
+}
+
+/* '' */
+.icon-menu_icon_promotions:before {
+  content: '\e80d';
+}
+
+/* '' */
+.icon-logo-betsoft:before {
+  content: '\e80e';
+}
+
+/* '' */
+.icon-logo-elkstudios:before {
+  content: '\e80f';
+}
+
+/* '' */
+.icon-logo-microgaming:before {
+  content: '\e810';
+}
+
+/* '' */
+.icon-logo-playngo:before {
+  content: '\e811';
+}
+
+/* '' */
+.icon-logo-pragmatic:before {
+  content: '\e812';
+}
+
+/* '' */
+.icon-logo-quickspin:before {
+  content: '\e813';
+}
+
+/* '' */
+.icon-logo-spinomenal:before {
+  content: '\e814';
+}
+
+/* '' */
+.icon-close-simplified:before {
+  content: '\e816';
+}
+
+/* '' */
+.icon-search:before {
+  content: '\e817';
+}
+
+/* '' */
+.icon-down-open:before {
+  content: '\e818';
+}
+
+/* '' */
+.icon-resize-full:before {
+  content: '\e81e';
+}
+
+/* '' */
+.icon-cancel-1:before {
+  content: '\e81f';
+}
+
+/* '' */
+.icon-search-1:before {
+  content: '\e820';
+}
+
+/* '' */
+.icon-blank:before {
+  content: '\f0c8';
+}
+
+/* '' */
+.icon-ok-squared:before {
+  content: '\f14a';
+}
+
+/* '' */
+.icon-sliders:before {
+  content: '\f1de';
+}
+
+/* '' */
+.icon-address-card-o:before {
+  content: '\f2bc';
+}
+
+/* '' */
+.icon-key:before {
+  content: '\e805';
+}
+
+/* '' */
+.icon-lock:before {
+  content: '\e806';
+}
+
+/* '' */
+.icon-stop:before {
+  content: '\e808';
+}
+
+/* '' */
+.icon-check-sign-in-a-rounded-black-square:before {
+  content: '\e815';
+}
+
+/* '' */
+.icon-rounded-black-square-shape:before {
+  content: '\e819';
+}
+
+/* '' */

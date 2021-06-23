@@ -1,0 +1,1290 @@
+
+@import "utils/global_styles";
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid $formFieldsetBorder;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: $font-weight-700;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: $Primary-Font;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.checkbox label,
+.radio label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: $font-weight-300;
+  cursor: pointer;
+}
+%absoluteValues {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control {
+
+  &[disabled],
+  &[readonly],
+  &.disabled {
+    background-color: $formControlDisableBgColor;
+    opacity: 1;
+    pointer-events: none;
+    border: none;
+  }
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $formControlColor;
+  line-height: 18px;
+  font-weight: $font-weight-700;
+  background-color: $formControlBgColor;
+  height: 60px;
+  padding: 15px 46px 0 23px;
+  box-shadow: none;
+  border: 2px solid $formControlBorder; 
+  outline: none;
+  width:100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.has-error .form-control {
+  border: 2px solid $formControlErrorBorder !important;
+  box-shadow: none;
+
+  &:focus {
+    border: 2px solid $formControlErrorBorder;
+    box-shadow: none;
+  }
+}
+
+.update_profile_block .form-control,
+.preference-centre .form-control, 
+.reality-check .form-control {
+  border: 2px solid $formControlSuccessBorder;
+}
+
+.has-success {
+  .form-control {
+    border: 2px solid $formControlSuccessBorder;
+    box-shadow: none;
+    background-color: $formControlSuccessBgColor;
+
+    &:focus {
+      border: 2px solid $formControlSuccessFocusBorder;
+      box-shadow: none;
+    }
+  }
+
+  .controls {
+    &:after {
+      content: "";
+      background: url(/assets/img/icon-verified.svg) no-repeat;
+      background-size: 100% 100%;
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      right: 25px;
+      top: 21px;
+    }
+  }
+}
+
+select.form-control {
+  padding-top: 5px;
+}
+
+.disabled .flag-container {
+  pointer-events: none;
+}
+
+.flag-container+#phoneNumberFlag {
+  margin-left: 120px;
+
+  input[type=text] {
+    padding-left: 23px !important;
+  }
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+  padding-left: 0;
+  font-weight: $font-weight-700;
+  font-size: 15px;
+  padding-top: 3px;
+  min-width: 45px;
+  text-align: left;
+}
+
+.intl-tel-input.allow-dropdown {
+  .flag-container {
+    width: 110px !important;
+    background: $formTelInputFlagContainerBgColor;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+
+    .selected-flag {
+      width: 100% !important;
+      background: $formTelInputFlagContainerSelectedBgColor !important;
+      border-radius: 3px;
+      padding: 0 4px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-around;
+
+      &:after {
+        content: '\e809';
+        font-family: "fontello";
+        font-size: 6px;
+        font-weight: bold;
+        color: $formTelInputFlagContainerSelectedAfterColor;
+      }
+
+      &:hover,
+      &:focus {
+        background: $formTelInputFlagContainerSelectedHoverColor;
+      }
+
+      .iti-arrow {
+        display: none;
+      }
+
+      .iti-flag {
+        position: inherit;
+        top: inherit;
+        bottom: inherit;
+        margin: auto;
+      }
+    }
+  }
+
+  .country-list {
+    max-width: 300px;
+    bottom: 100%;
+  }
+}
+
+.iti-mobile .intl-tel-input.iti-container {
+  z-index: 9999;
+}
+
+.controls select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.controls label {
+  position: absolute;
+  left: 26px;
+  top: 22px;
+  color: $formControlsLabelColor;
+  font-size: 15px;
+  font-weight: $font-weight-900;
+  display: inline-block;
+  padding: 0;
+  pointer-events: none;
+  -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  -o-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  -webkit-transition: color 0.3s, top 0.3s, background-color 0.8s;
+  transition: color 0.3s, top 0.3s, background-color 0.8s;
+}
+
+.controls .paymentlabel {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-size: 12px;
+  color: $formControlsPaymentLabelColor;
+}
+
+.placeholder-currency-input {
+  .payment-currency-symbl {
+    width: 100%;
+    background: $formPaymentCurrencySymblBgColor;
+    padding: 10px 0 0 25px;
+    display: block;
+    height: 60px;
+    border-radius: 4px;
+
+    .curency_symbol {
+      width: auto;
+      display: inline-block;
+      font-size: 15px;
+      color: $formPaymentCurrencySymblColor;
+      padding-top: 18px;
+      vertical-align: top;
+      font-weight: $font-weight-700;
+    }
+
+    input {
+      border: none;
+      background: none;
+      padding: 12px 0 0 0;
+      display: inline-block;
+      width: 90% !important;
+      height: 46px;
+
+      @media (max-width: 480px) {
+        width: 80% !important;
+      }
+
+      &:focus {
+        border: none;
+        background: none;
+        padding: 10px 0px 0 0;
+      }
+    }
+  }
+}
+
+.has-success .placeholder-currency-input .payment-currency-symbl,
+.placeholder-currency-input.active .payment-currency-symbl {
+  background: $formPaymentCurrencySymblSuccessBgColor;
+  border: 2px solid $formPaymentCurrencySymblSuccessBorder;
+  outline: none;
+  padding: 8px 0 0 23px;
+}
+
+.has-success .placeholder-currency-input .payment-currency-symbl {
+  border-color: $formPaymentCurrencySymblSuccessBorderColor;
+}
+
+.controls label.active {
+  top: 15px;
+  left: 25px;
+  font-size: 12px;
+  color: $formControlsLabelActiveColor;
+  font-weight: $font-weight-700;
+}
+
+.controls textarea {
+  resize: none;
+  height: 200px;
+}
+
+.arrow_box {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  background: $formErrorMsgToolTipBgColor;
+  right: -80px;
+  top: 4px;
+  -webkit-box-shadow: $formErrorMsgToolTipBoxShadow;
+  box-shadow: $formErrorMsgToolTipBoxShadow;
+  color: $formErrorMsgToolTipColor;
+  padding: 10px;
+  height: 50px;
+  border-radius: 3px;
+  font-size: 10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  font-weight: $font-weight-700;
+
+  @media (min-width: 767px) {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+  }
+
+  &:before {
+    right: 100%;
+    top: calc(50% - 8px);
+    border: 8px solid transparent;
+    border-right: 8px solid $formErrorMsgToolTipArrowColor;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.arrow_box_small {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  background: $formErrorMsgToolTipBgColor;
+  right: -80px;
+  top: calc(50% - 26px);
+  height: 50px;
+  -webkit-box-shadow: $formErrorMsgToolTipBoxShadow;
+  box-shadow: $formErrorMsgToolTipBoxShadow;
+  color: $formErrorMsgToolTipColor;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 10px;
+  z-index: 2;
+  max-width: 150px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-weight: $font-weight-700;
+
+  @media (min-width: 767px) {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+  }
+
+  &:before {
+    right: 100%;
+    top: calc(50% - 8px);
+    border: 8px solid transparent;
+    border-right: 8px solid $formErrorMsgToolTipArrowColor;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+@-webkit-keyframes bounceIn {
+
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.custom_padding {
+  padding: 0 5px 0 5px;
+}
+
+.controls {
+  position: relative;
+}
+
+.pwd-show {
+  // display: none;
+  position: absolute;
+  right: 25px;
+  top: 23px;
+  color: $formPwdShowIconColor;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.eyeshow:after {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    height: 20px;
+    width: 3px;
+    background: $formPwdShowIconAfterBgColor;
+    transform: rotate(-45deg);
+    border-radius: 5px;
+  }
+
+  &:hover+ {
+
+    .arrow_box,
+    .arrow_box_small {
+      visibility: hidden;
+    }
+  }
+}
+
+.passwrd .form-control {
+  padding: 15px 70px 0 23px;
+}
+
+.has-success .controls {
+
+  &.passwrd:after,
+  &.select-succ:after {
+    right: 48px;
+  }
+}
+
+.select-succ .form-control {
+  padding: 5px 70px 0 25px;
+}
+
+.flex-label {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-align: center;
+
+  label {
+    display: block;
+    width: 100%;
+    color: $formFlexLabelColor;
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .arrow_box,
+  .arrow_box_small {
+    position: relative;
+    right: inherit;
+    top: inherit;
+    height: auto;
+    margin: 7px 0 0 0;
+    max-width: 100%;
+
+    &:before {
+      right: 20px;
+      top: -32px;
+      border: 16px solid transparent;
+      border-bottom: 16px solid $formErrorMsgToolTipArrowColor;
+      z-index: 999;
+    }
+  }
+
+  .flex-label {
+    text-align: left;
+    height: 45px;
+  }
+
+  .birthday .custom_padding {
+    padding: 0 10px 0 0px;
+
+    select {
+      padding: 15px;
+    }
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+}
+
+#phoneNumberFlag input {
+  padding-left: 23px !important;
+  padding-right: 50px !important;
+}
+
+input:-webkit-autofill+label,
+input:-webkit-autofill:focus+label {
+  top: 15px;
+  left: 25px;
+  font-size: 12px;
+  color: $formInputAutofillLabelColor;
+  font-weight: $font-weight-700;
+}
+
+.headerOnScroll .search_input input:-webkit-autofill,
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px $formInputAutofillBoxShadow inset !important;
+  transition: background-color 99999s ease-in-out 0s !important;
+  -webkit-text-fill-color: $formInputAutofillColor !important;
+}
+
+.headerOnScroll .search_input input:-webkit-autofill,
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+select:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px $formInputAutofillBoxShadow inset !important;
+  -webkit-text-fill-color: $formInputAutofillColor !important;
+  transition: background-color 99999s ease-in-out 0s !important;
+}
+
+.search_input input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px $formHeaderSearchInputAutofillBoxShadow inset !important;
+  -webkit-text-fill-color: $formHeaderSearchInputAutofillColor !important;
+  transition: background-color 99999s ease-in-out 0s !important;
+}
+
+input::-ms-clear,
+input::-ms-reveal,
+select::-ms-expand {
+  display: none;
+}
+
+select:focus::-ms-value {
+  color: inherit;
+  background: none;
+}
+
+.successmsg {
+  color: $formSuccessMsgColor;
+  text-align: center;
+  margin: 5px 0;
+  font-weight: $font-weight-700;
+  display: block;
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+.Errormsg {
+  color: $formErrorMsgColor;
+  text-align: center;
+  margin: 5px 0;
+  font-weight: $font-weight-700;
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+// .intro-reg-form {
+//   background-color: #FFF;
+//   padding: 40px;
+//   border-radius: 3px;
+//   margin: 40px 0;
+// }
+
+.intl-tel-input {
+  width: 100%;
+}
+
+.checkbox label {
+  color: $formCheckBoxLabelColor;
+}
+
+.checkbox label a {
+  color: $formCheckBoxLabelLinkColor;
+  text-decoration: underline;
+}
+
+.checkbox label a:hover {
+  color: $formCheckBoxLabelLinkHoverColor;
+  text-decoration: underline;
+}
+
+.checkbox .has-error+label:before {
+  border-color: $formCheckBoxLabelErrorBorder;
+}
+
+.checkbox .ng-valid+label {
+  color: $formCheckBoxLabelngValidBorder;
+  @media only screen and (max-width:992px) {
+    color: $formCheckBoxMobLabelngValidBorder;
+  }
+}
+
+.form-group {
+  margin-bottom: 10px !important;
+}
+
+select {
+  display: inline-block;
+  background-color: $formSelectBgColor;
+  transition: all 0.3s;
+
+  // &.classic {
+  //   background: $formSelectBgColor url("/assets/img/down-arrow.png") no-repeat center right 10px;
+  // }
+}
+
+.checkbox {
+  text-align: left;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  input[type="checkbox"],
+  input [type="radio"]{
+    cursor: pointer;
+    position: absolute;
+    margin-top: 4px\9;
+    margin-left: -20px;
+  }
+
+  label:after {
+    padding-left: 3px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  .label-text {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+select {
+  border-radius: 5px;
+  font-size: 15px;
+  color: $formSelectColor;
+  line-height: 18px;
+  font-weight: $font-weight-300;
+  background-color: $formSelectBgColor;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  height: auto;
+  padding: 20px 35px 14px 20px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: $formSelectBgColor url("/assets/img/down-arrow.png") no-repeat center right 10px;
+}
+
+input {
+  border-radius: 5px;
+  font-size: 15px;
+  color: $formInputColor;
+  line-height: 18px;
+  font-weight: $font-weight-300;
+  background-color: $formInputBgColor;
+  height: auto;
+  padding: 20px 24px 14px;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.error-msg {
+  color: $formErrorMsgColor2;
+}
+
+// Material mobiDatePicker
+.mat-input-container.mat-form-field,
+.custom_select_dropdown {
+  width: 100%;
+}
+
+.cdk-overlay-pane {
+  border-top: 25px solid transparent;
+}
+
+.mat-form-field-wrapper {
+  padding: 0;
+  background: $matFormFieldWrapperBgColor;
+  color: $matFormFieldWrapperTextColor;
+  border-radius: 5px;
+  width: 100%;
+  height: 57px;
+  line-height: 26px;
+  font-weight: $font-weight-700;
+  font-size: 15px;
+
+  
+  input.mat-input-element {
+    padding-left: 25px;
+  }
+
+  .mat-form-field-underline {
+    height: 0;
+  }
+
+  .mat-form-field-underline .mat-form-field-ripple {
+    display: none;
+  }
+
+  .custom_select_dropdown & {
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      @extend %absoluteValues;
+      left: 0;
+      right: 0;
+      z-index: 9;
+      .mat-datepicker-toggle {
+        @extend %absoluteValues;
+        right: 0;
+        outline: none;
+      }
+      .mat-icon-button {
+        @extend %absoluteValues;
+        z-index: 999;
+        height: 100%;
+        background: url("/assets/img/down-arrow.png") no-repeat center;
+        background-position: calc(100% - 12px);
+
+        span {
+          display: none;
+        }
+      }
+
+      .mat-button-focus-overlay,
+      .mat-button-ripple-round {
+        display: none;
+      }
+    }
+  }
+}
+
+input[type="file"].chooseInput {
+  display: none;
+}
+
+.selectric-wrapper {
+  border-radius: 5px;
+  font-size: 15px;
+  color: $formSelectColor;
+  line-height: 18px;
+  font-weight: $font-weight-300;
+  transition: none;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+  outline: none;
+  height: 60px;
+  background: $formSelectBgColor url("/assets/img/down-arrow.png") no-repeat center right 25px;
+}
+
+.selectric {
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 20px 25px 14px;
+
+  b.button {
+    display: none;
+  }
+
+  .label {
+    height: auto;
+    line-height: inherit;
+    text-align: left;
+    margin: 5px 0 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: $font-weight-700;
+    color: $formSelectricLabelColor;
+  }
+}
+
+.selectric-open .selectric-items {
+  width: 100% !important;
+  background: $formSelectricItemsBgColor;
+}
+
+.selectric-items li {
+  color: $formSelectricItemsLiColor;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: $font-weight-300;
+}
+
+label {
+  font-weight: $font-weight-300;
+}
+
+.iti-flag {
+  background-image: url("/assets/img/flags.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .iti-flag {
+    background-image: url("/assets/img/flags@2x.png");
+  }
+}
+
+
+.checkbox {
+  padding-left: 20px;
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 14px;
+    font-weight: $font-weight-700;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 21px;
+      height: 21px;
+      left: 0;
+      top: 2px;
+      margin-left: -18px;
+      border: 2px solid $formCheckBoxLabelBorder;
+      border-radius: 5px;
+      background-color: $formCheckBoxLabelBgColor;
+      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+
+    &:after {
+      display: inline-block;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 0;
+      top: 2px;
+      margin-left: -18px;
+      padding-left: 4px;
+      padding-top: 1px;
+      font-size: 14px;
+      color: $formCheckBoxLabelAfterColor;
+      line-height: 1.4;
+      background-color: $formCheckBoxLabelAfterBgColor;
+      border-radius: 5px;
+    }
+
+    &.loader-s {
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      .loader-display {
+        display: block !important;
+        width: 26px;
+        height: 26px;
+        border: 1px solid $formCheckBoxLoaderDisplayBorder;
+        border-radius: 3px;
+        background-color: $formCheckBoxLoaderDisplayBgColor;
+        position: absolute;
+        left: -20px;
+        -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        line-height: 1;
+
+        i {
+          color: $formCheckBoxLoaderDisplayIconColor;
+          position: relative;
+          top: 1px;
+          left: 1px;
+          padding: 2px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .label-text {
+      line-height: 1;
+      display: inline-block;
+    }
+  }
+
+  input {
+
+    &[type="checkbox"],
+    [type="radio"] {
+      opacity: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.checkbox input[type="checkbox"]:focus+label::before,
+.checkbox input[type="radio"]:focus+label::before {
+  outline: none;
+  outline-offset: 0;
+}
+
+.checkbox input[type="checkbox"]:checked+label::after,
+.checkbox input[type="radio"]:checked+label::after {
+  content: "\e804";
+  // background: url(/assets/img/checkbox-small-active.svg) no-repeat 3px 3px;
+  // background-size: 68%;
+  width: 22px;
+  height: 22px;
+  margin: -1px 0 0 -18px;
+  border: 2px solid $formcheckBoxBorderColor;
+  color: $formcheckBoxBorderColor;
+  background: none;
+  padding: 0;
+  font: normal 19px/20px 'fontello';
+}
+
+.checkbox input[type="checkbox"]:indeterminate+label::after,
+.checkbox input[type="radio"]:indeterminate+label::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 3px;
+  background-color: $formCheckBoxindeterminateLabelAfterBgColor;
+  border-radius: 2px;
+  margin-left: -16.5px;
+  margin-top: 7px;
+}
+
+.checkbox input[type="checkbox"]:disabled,
+.checkbox input[type="radio"]:disabled {
+  cursor: not-allowed;
+}
+
+.checkbox input[type="checkbox"]:disabled+label,
+.checkbox input[type="radio"]:disabled+label {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.checkbox input[type="checkbox"]:disabled+label::before,
+.checkbox input[type="radio"]:disabled+label::before {
+  background-color: $formCheckBoxdisabledLabelBeforeBgColor;
+  cursor: not-allowed;
+}
+
+.checkbox input[type="checkbox"]:disabled+label::after,
+.checkbox input[type="radio"]:disabled+label::after {
+  color: $formCheckBoxdisabledLabelAfterBgColor;
+  cursor: not-allowed;
+}
+
+.checkbox.checkbox-circle label::before {
+  border-radius: 50%;
+}
+
+.checkbox.checkbox-inline {
+  margin-top: 0;
+}
+
+.radio {
+  padding-left: 20px;
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 15px;
+    font-size: 15px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background-color: $formRadioBgColor;
+      transition: all 250ms ease;
+    }
+
+    &:after {
+      display: inline-block;
+      position: absolute;
+      content: " ";
+      width: 8px;
+      height: 8px;
+      left: 8px;
+      top: 9px;
+      margin-left: -19px;
+      border-radius: 50%;
+      background-color: $formRadioAfterBgColor;
+      -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+      -o-transform: scale(0, 0);
+      transform: scale(0, 0);
+      transition: all 250ms ease;
+    }
+  }
+}
+
+.radio input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.radio input[type="radio"]:focus+label::before {
+  outline: none;
+  outline-offset: 0;
+}
+
+.radio input[type="radio"]:checked+label::after {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.radio input[type="radio"]:disabled {
+  cursor: not-allowed;
+}
+
+.radio input[type="radio"]:disabled+label {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.radio input[type="radio"]:disabled+label::before {
+  cursor: not-allowed;
+}
+
+.radio input[type="radio"]:disabled+label::after {
+  background-color: $formRadioDisableLabelAfterBgColor;
+  cursor: not-allowed;
+}
+
+.radio.radio-inline {
+  margin-top: 0;
+}
+
+input[type="checkbox"].styled:checked+label:after,
+input[type="radio"].styled:checked+label:after {
+  content: "";
+  background: url(/assets/img/checkbox-small-active.svg);
+  background-size: 100%;
+}
+
+input[type="checkbox"] .styled:checked+label::before,
+input[type="radio"] .styled:checked+label::before {
+  color: $formRadioStyleCheckedLabelBeforeColor;
+}
+
+input[type="checkbox"] .styled:checked+label::after,
+input[type="radio"] .styled:checked+label::after {
+  color: $formRadioStyleCheckedLabelAfterColor;
+}
+
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline,
+.has-success.radio label,
+.has-success.checkbox label,
+.has-success.radio-inline label,
+.has-success.checkbox-inline label {
+  color: $formSuccessInputEleLabelColor;
+}
+
+
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: $font-weight-300;
+}
+
+select {
+    font-family: inherit;
+}
+
+/*to hide the angular material/cdk ally(screen reader) containers*/
+.cdk-visually-hidden{
+  border:0;clip:rect(0 0 0 0);
+  height:1px;margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+  outline:0;
+  -webkit-appearance:none;
+  -moz-appearance:none
+}

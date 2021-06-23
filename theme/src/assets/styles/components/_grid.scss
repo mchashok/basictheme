@@ -1,0 +1,132 @@
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix();
+}
+
+.container-fluid {
+  width: $fluid;
+  @include clearfix();
+}
+
+.row {
+  @include clearfix();
+}
+
+%defaultColumnStyles {
+  position: relative;
+  min-height: 1px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+// Grid configurations
+$gridConfig: (
+  xs: (
+    width: $xs,
+    gutterWidth: 36px,
+    setGridColumns: true
+  ),
+  sm: (
+    width: $sm,
+    gutterWidth: 30px,
+    setGridColumns: true
+  ),
+  md: (
+    width: $md,
+    gutterWidth: 36px,
+    setGridColumns: true
+  ),
+  lg: (
+    width: $lg,
+    gutterWidth: 30px,
+    setGridColumns: true
+  ),
+  xl: (
+    width: $xl,
+    gutterWidth: 36px
+  ),
+  xxl: (
+    width: $xxl,
+    gutterWidth: 50px
+  ),
+  xxxl: (
+    width: $xxxl,
+    gutterWidth: 50px,
+    setGridColumns: true
+  )
+);
+
+@each $gridName,
+$gridDetails in $gridConfig {
+
+  // Set Grid columns default styles
+  @for $i from 1 through $grid {
+    @if map-get($gridDetails, setGridColumns) == true {
+      .col-#{$gridName}-#{$i} {
+        @extend %defaultColumnStyles;
+      }
+    }
+  }
+
+  // Checking below conditions for Mobile media query
+  $mediaRange: null;
+  $containerWidth: null;
+  $breakpoints: null;
+  @if map-get($gridDetails, width) == $xs {
+    $mediaRange: 'max';
+    $containerWidth: $fluid;
+    $breakpoints: $sm - 1;
+  } @else if map-get($gridDetails, width) == $sm {
+    $mediaRange: 'min';
+    $containerWidth: $fluid;
+    $breakpoints: $sm;
+  } @else {
+    $mediaRange: 'min';
+    $containerWidth: map-get($gridDetails, width) - map-get($gridDetails, gutterWidth);
+    $breakpoints: map-get($gridDetails, width)
+  }
+
+  @media (#{$mediaRange}-width: $breakpoints) {
+    // container width
+    .container {
+      width: $containerWidth;
+      padding-right: map-get($gridDetails, gutterWidth) / 2;
+      padding-left: map-get($gridDetails, gutterWidth) / 2;
+    }
+
+    // Gutter margin for row class
+    .row {
+      margin-left: -(map-get($gridDetails, gutterWidth) / 2);
+      margin-right: -(map-get($gridDetails, gutterWidth) / 2);
+    }
+
+    @for $i from 1 through $grid {
+      // Check for Breakpoints require colummns(col-*)
+      @if map-get($gridDetails, setGridColumns) == true {
+
+        // Columns
+        .col-#{$gridName}-#{$i} {
+          width: percentage($i / $grid);
+          float: left;
+        }
+
+        // Offset columns
+        .col-#{$gridName}-offset-#{$i} {
+          margin-left: percentage($i / $grid);
+        }
+
+        // Pull Columns
+        .col-#{$gridName}-pull-#{$i} {
+          right: percentage($i / $grid);
+        }
+
+        // Push Columns
+        .col-#{$gridName}-push-#{$i} {
+          left: percentage($i / $grid);
+        }
+      }
+    }
+  }
+}

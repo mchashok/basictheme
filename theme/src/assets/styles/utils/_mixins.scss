@@ -1,0 +1,435 @@
+// Keyframe Mixin
+@mixin keyframes($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Buttons
+@mixin buttonSize($font-size: 18px, $minWidth: 260px, $height: 76px, $line-height: 76px, $radius: true, $padding: 0 25px) {
+  font-size: $font-size;
+  min-width: $minWidth;
+  height: $height;
+  line-height: $line-height;
+  padding: $padding;
+
+  @if $radius==true {
+    @include border-radius($buttonRadius);
+  }
+}
+
+// Button Theming
+@mixin buttonTheme($background, $backgroundImage, $color, $border, $boxShadow, $borderColor: false) {
+  background: $background;
+  background-image: $backgroundImage;
+  color: $color;
+  -webkit-box-shadow: $boxShadow;
+  box-shadow: $boxShadow;
+
+  @if $borderColor==false {
+    border: $border;
+  }
+
+  @else {
+    border-color: $border;
+  }
+}
+
+// Background Clip
+@mixin backgroundClip() {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Transitions
+@mixin transition($transition) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity; // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// Box shadow
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+/* Flexbox Mixins */
+@mixin flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flexVerticalCenter {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin flexJustifyBetween {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin flexJustifyCenter {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+}
+
+// Slot games search results styles
+@mixin slotGamesSearchResults($enableButtons) {
+  .filteredgames {
+    position: absolute;
+    padding: 0;
+    border-radius: 3px;
+    overflow-x: hidden;
+    max-height: 360px;
+    overflow-y: auto;
+
+    .close-search {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .ser_wrap {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      min-height: 120px;
+      margin: 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .ser_nogames {
+      width: 100%;
+      font-size: 15px;
+      font-weight: $font-weight-700;
+      margin: 0;
+    }
+  }
+}
+
+// Jackpot Banners
+@mixin jackpotItem($jackpotBgColor, $jackpotBRadius, $jackpotWidth, $jackpotHeight) {
+  background-color: $jackpotBgColor;
+  border-radius: $jackpotBRadius;
+  width: $jackpotWidth;
+  min-height: $jackpotHeight;
+}
+
+// ----------- Responsive Breakpoint -----------//
+@mixin breakpoint($point) {
+  @if $point==extrasmall {
+    @media screen and(max-width: $xs) {
+      @content;
+    }
+  }
+
+  @else if $point==extratoolarge {
+    @media screen and(min-width: $xl) {
+      @content;
+    }
+  }
+
+  @else if $point==xxlarge {
+    @media screen and(min-width: $xxl) {
+      @content;
+    }
+  }
+
+  @else if $point==xxxlarge {
+    @media screen and(min-width: $xxxl) {
+      @content;
+    }
+  }
+
+  @else if $point==extralarge {
+    @media screen and(min-width: $lg) {
+      @content;
+    }
+  }
+
+  @else if $point==large {
+    @media screen and(min-width: $md) {
+      @content;
+    }
+  }
+
+  @else if $point==medium {
+    @media screen and(min-width: $sm) {
+      @content;
+    }
+  }
+}
+
+// Site Loader theme Mixin
+@mixin loadingColors($loaderBorderColor, $loaderBgColor) {
+  background: $loaderBorderColor;
+  background: -moz-linear-gradient(left, $loaderBorderColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, $loaderBorderColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, $loaderBorderColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, $loaderBorderColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, $loaderBorderColor 10%, rgba(255, 255, 255, 0) 42%);
+
+  &:before {
+    background: $loaderBorderColor;
+  }
+
+  &:after {
+    background: $loaderBgColor;
+  }
+}
+
+@mixin menuAnimation($prop1, $prop2) {
+  bottom: $prop1;
+  transition: 0.3s ease-in-out;
+
+  .footer-sticky_nav--top-show & {
+    bottom: $prop2;
+  }
+}
+
+@mixin moreGames_Search($moreGamesSearchBgClr, $moreGamesSearchBoxShadow, $moreGamesSearchHeadingClr, $moreGamesSearchBeforeBgClr) {
+  height: 50px;
+  border-radius: 36px;
+  background-color: $moreGamesSearchBgClr;
+  box-shadow: $moreGamesSearchBoxShadow;
+
+  h2 {
+    color: $moreGamesSearchHeadingClr;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 50px;
+    margin: 0 0 0 68px;
+    padding: 0;
+  }
+
+  &:before {
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-color: $moreGamesSearchBeforeBgClr;
+    position: absolute;
+    border-radius: 50px;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+@mixin myAccountIcon {
+  $icons: ("myaccount",
+      "withdrawls",
+      "transactions",
+      "gamehistory",
+      "activebonuses",
+      "cashier"
+    );
+
+  @each $name in $icons {
+
+    &-#{$name} {
+      .icon--#{$name}-active {
+        display: none;
+      }
+
+      .icon--#{$name} {
+        display: block;
+      }
+    }
+
+    &.active {
+      .icon--#{$name}-active {
+        display: block;
+      }
+
+      .icon--#{$name} {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin cashierCard($cashierBorder, $cashierRadius, $cashierBg, $cashierShadow) {
+  border: 1px solid $cahierBonusCardBorder;
+  border-radius: $cashierRadius;
+  background-color: $cahierBonusCardBg;
+  box-shadow: 0 5px 10px 0 $cahierBonusCardBoxShadow;
+}
+
+@mixin sliderAnimationNone {
+  animation: none;
+}
+
+// Left Nav Submit Button
+@mixin submitButton {
+  background: $leftSignUpStepsBtnBgClr;
+  box-shadow: none;
+  width: 100%;
+  color: $leftSignUpStepsBtnClr;
+
+  &:hover {
+    color: $leftSignUpStepsBtnClrHover;
+    background: $leftSignUpStepsBtnBgClrHover;
+    box-shadow: $leftSignUpStepsBtnBoxShadow;
+  }
+}
+
+// Left Navigation Scroll event
+@mixin navigationScroll {
+  &--container {
+    height: 100vh;
+    overflow-y: auto;
+
+    @media screen and(max-width:992px) {
+      overflow: visible;
+      height: auto;
+    }
+
+    &::before {
+      content: "";
+      background: $HeaderLeftToggleBG-Gradient;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 350px;
+      position: absolute;
+      z-index: 9;
+
+      @media screen and(max-width:992px) {
+        display: none;
+      }
+    }
+
+    .icon-cancel {
+      width: 40px;
+      height: 40px;
+      background: $bonusCashierBackIcon;
+      position: absolute;
+      top: 34px;
+      left: 328px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 20px;
+      animation-delay: 0.4s;
+
+      @media screen and(max-width:992px) {
+        display: none;
+      }
+    }
+
+  }
+
+  &--content {
+    width: 350px;
+    background-color: $cashierContentBg;
+    box-shadow: $cashierContentBgShadow;
+    padding: 20px;
+    position: relative;
+    z-index: 9;
+
+    @media screen and(max-width:992px) {
+      padding: 0;
+      margin: 0;
+      width: auto;
+      overflow: visible;
+      animation: none;
+      height: auto;
+    }
+
+
+
+    &_heading {
+      margin: 0 0 40px;
+      text-align: center;
+      width: 100%;
+
+      @media screen and(max-width:992px) {
+        display: none;
+      }
+
+      .heading {
+        color: $cashierContentHeadingClr;
+        margin: 0;
+        font: $font-weight-900 27px/30px $Primary-Font;
+
+      }
+    }
+  }
+
+  @content;
+}

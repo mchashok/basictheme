@@ -1,0 +1,875 @@
+$carouselBannerBgWrapBgColor: #F85B3F;
+
+@for $i from 1 through 4 {
+  .mb-#{10 * $i} {
+    margin-bottom: 10 * $i + px !important;
+  }
+}
+
+@for $i from 1 through 4 {
+  .mt-#{10 * $i} {
+    margin-top: 10 * $i + px !important;
+  }
+}
+
+ul li {
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.custom_padding {
+  padding: 0 5px;
+}
+
+// Disable Breadcrumb
+ul.breadcrumb {
+  display: none;
+}
+
+// List Items
+.list {
+  margin: 0 18px;
+  padding: 0;
+
+  li {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 22px;
+
+    b {
+      font-weight: $font-weight-700;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 10px 0;
+      padding: 0;
+      font-weight: $font-weight-500;
+
+      a {
+        text-decoration: underline;
+        color: $commonListItemsParaLinkColor;
+
+        &:hover {
+          color: $commonListItemsParaLinkHoverColor;
+        }
+      }
+    }
+
+    ol {
+      margin: 0 15px;
+      padding: 0;
+
+      li {
+        margin: 15px 0;
+        font-weight: $font-weight-500;
+        font-size: 15px;
+        line-height: 22px;
+
+        b {
+          font-weight: $font-weight-700;
+        }
+
+        a {
+          text-decoration: underline;
+          color: $commonListItemsOrderListLinkColor;
+
+          &:hover {
+            color: $commonListItemsOrderListLinkHoverColor;
+          }
+        }
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: $commonListItemsLinkColor;
+
+      &:hover {
+        color: $commonListItemsLinkHoverColor;
+      }
+    }
+  }
+}
+
+// Unorderlist items
+ul.unorderlist {
+  margin: 0 15px;
+  padding: 0;
+
+  li {
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: $font-weight-500;
+    line-height: 22px;
+
+    b {
+      font-weight: $font-weight-700;
+    }
+
+    a {
+      color: $commonListItemsUnorderLinkColor;
+      text-decoration: underline;
+
+      &:hover {
+        color: $commonListItemsUnorderLinkHoverColor;
+      }
+    }
+  }
+}
+
+// Limits para
+.limits-para {
+  font-weight: $font-weight-700;
+
+  a {
+    cursor: pointer;
+  }
+}
+
+// Registration steps footer msg
+.form_footer_msg {
+  text-align: center;
+  font-size: 12px;
+  font-weight: $font-weight-300;
+  color: $commonRegistrationFooterMsgColor;
+  margin-bottom: 0;
+
+  a {
+    color: $commonRegistrationFooterMsgLinkColor;
+    text-decoration: none;
+  }
+}
+
+.selected-flag {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+// Common Title
+.headingtitle {
+  font-size: 26px;
+  font-weight: $font-weight-700;
+  color: $commonHeadingTitleColor;
+
+  @media only screen and (max-width:520px) {
+    font-size: 20px;
+    margin: 20px 0 30px;
+  }
+}
+
+// Server Error messages
+.server_err_msg {
+  width: 400px;
+  min-height: 175px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  color: $serverErrMsgColor;
+  text-align: left;
+  background: $serverErrMsgBgColor;
+  padding: 31px;
+  box-shadow: $serverErrMsgBoxShadow;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-weight: $font-weight-700;
+
+  @media only screen and (max-width:767px) {
+    width: 90%;
+    height: auto;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    margin: 0 auto;
+  }
+
+  .defaulterror_msg {
+    text-align: left;
+    font-weight: $font-weight-700;
+    color: $serverErrMsgDefaultErrColor;
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+
+  .servermessage {
+    text-align: left;
+    color: $serverErrMsgServerMsgColor;
+    margin-bottom: 16px;
+    font-size: 13px;
+
+    @media only screen and (max-width:767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 13px;
+    font-weight: $font-weight-300;
+  }
+
+  span a {
+    text-align: left;
+    color: $serverErrMsgLinkColor;
+    font-size: 13px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: $font-weight-700;
+    display: inline;
+    clear: both;
+    outline: none;
+    box-shadow: 0;
+    border: none;
+  }
+
+  button.ser_close {
+    color: $serverErrMsgCloseBtnColor;
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    z-index: 55;
+    opacity: 1;
+    font-size: 12px;
+    font-weight: $font-weight-300;
+    background: none;
+    border: none;
+  }
+}
+
+// Static page and Contact page common banner
+.gen_banner_block {
+  width: 100%;
+  padding: 30px 50px;
+  background: $commonBannerBgColor url('/assets/img/banner-bg-watermark.png') no-repeat 93% top/30%;
+  height: 160px;
+  position: relative;
+  margin-top: 40px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: url('/assets/img/banner-zigzag.png') repeat-x bottom left/150%;
+
+    @media screen and(max-width: 992px) {
+      background-size: 260%;
+    }
+
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    height: 20px;
+
+  }
+
+  @media screen and(max-width: 992px) {
+    margin-right: 18px;
+    margin-left: 18px;
+    width: auto;
+  }
+
+  @media only screen and (max-width:667px) {
+    height: 80px;
+  }
+
+  @media only screen and (max-width:480px) {
+    padding: 30px 25px;
+  }
+
+}
+
+.pagetitle {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  color: $commonBannerTitleColor;
+
+  @media screen and(max-width: 667px) {
+    font-size: 24px;
+  }
+}
+
+.centered_page {
+  margin: 0 auto;
+}
+
+.cnt_block {
+  background: $commonCntBlockBgColor;
+  height: 100%;
+  min-height: 100%;
+}
+
+.messagebox {
+  margin: 10px 0;
+}
+
+.cnt_button_margin {
+  margin: 40px 0 0;
+  cursor: pointer;
+}
+
+// Faq Page
+.faq-category-tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    font-size: 15px;
+    font-weight: $font-weight-300;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: $faqTabsSelectionTextColor;
+
+    &.active {
+      font-weight: $font-weight-700;
+      color: $faqTabsActiveSelectionTextColor;
+    }
+  }
+}
+
+.faq-tabs {
+  @media (max-width: 767px) {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    color: $faqContentUnorderedListColor;
+  }
+
+  ol {
+    color: $faqContentorderedListColor;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: $faqPageTitleColor;
+  }
+
+  a {
+    color: $faqPageLinkColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: $faqPageLinkHoverColor;
+    }
+  }
+
+  p {
+    font-weight: $font-weight-300;
+    color: $faqPageParaColor;
+
+    +p {
+      margin-top: 20px;
+    }
+  }
+
+  .faq-cnt-blks {
+    margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.loader {
+  display: none !important;
+}
+
+// Deposit Loding Iframe
+.depositLoadingIframe {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .loader {
+    display: block;
+
+    &:after {
+      background: $depositLoaderBgColor;
+    }
+  }
+}
+
+#card-redirect-container iframe {
+  z-index: 5;
+  position: relative;
+}
+
+// Suspend Account Block
+.suspend_acnt_block {
+  h3 {
+    text-align: center;
+    font-size: 25px;
+    margin: 0px;
+    padding: 48px 0 11px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 23px;
+    padding: 0 44px;
+    color: $suspendedAcntParaColor;
+  }
+
+  .button_margin {
+    margin: 65px auto;
+    display: block;
+  }
+
+  .sus_frm_block {
+    padding: 0 44px;
+    margin: 30px 0;
+  }
+
+  .sus_frm_footer {
+    font-size: 15px;
+    color: $suspendedAcntFooterColor;
+    padding: 0 0 20px 0;
+    cursor: pointer;
+    font-weight: $font-weight-700;
+  }
+
+  .logout_btn {
+    margin: 100px auto;
+    display: block;
+  }
+}
+
+// Merge Success wrap
+.merge-success-wrap {
+  padding: 50px;
+
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
+
+  h4 {
+    margin: 0 0 40px 0;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: left;
+    font-weight: $font-weight-700;
+    margin-bottom: 20px;
+    color: $mergeSuccessParaColor;
+  }
+
+  .startply-btn {
+    margin: 40px 0 30px 0;
+  }
+
+  .completeprofile-btn {
+    margin: 40px 0 20px 0;
+  }
+
+  .incompleteprofile-btn {
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+    color: $mergeSuccessInCompleteProfileBtnColor;
+    font-weight: $font-weight-700;
+    cursor: pointer;
+
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+// Transparent Overlay
+.transparent_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+
+
+@media screen and(min-width: 993px) {
+
+  %width {
+    content: "";
+    position: absolute;
+    top: 14px;
+    width: 33px;
+    height: 33px;
+    background: $carouselBannerArrorBgColor url(/assets/img/right-arrow.svg) no-repeat center / 40%;
+    border-radius: 50px;
+    background-position: 11px 10px;
+  }
+
+  .slider {
+
+
+    >span {
+      position: absolute;
+      top: 50%;
+      background: $carouselBannerBgWrapBgColor;
+      z-index: 1;
+      margin: -10px 0 0;
+      color: $carouselBannerArrorColor;
+      cursor: pointer;
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      transition: 0.3s;
+
+
+      &.prev {
+        left: -30px;
+
+        &:before {
+          left: 14px;
+          @extend %width;
+          transform: rotate(180deg);
+
+        }
+      }
+
+      &.next {
+        right: -30px;
+
+        &:after {
+          right: 14px;
+          @extend %width;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and(max-width: 992px) {
+
+  .prev,
+  .next {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $mainHeaderOverlayBg;
+  z-index: 998;
+}
+
+// Language selection
+.header_language {
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $mainHeaderOverlayBg;
+    z-index: 8;
+  }
+}
+
+.language-selection-wrap {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  height: 50px;
+  margin: 0;
+  z-index: 8;
+  width: 100%;
+  z-index: 9;
+
+  @media (max-width: 992px) {
+    margin: 0;
+    width: 215px;
+  }
+}
+
+.select-lang-box {
+  margin: 0;
+  padding: 9px 36px 10px 12px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $footerLanguageBoxBorder;
+  border-radius: 40px;
+  box-shadow: $footerLanguageBoxShadow;
+  color: $footerLanguageBoxColor;
+  font-size: 16px;
+  background: $footerLanguageBoxBg url(/assets/img/down-arrow.png) no-repeat center right 16px;
+  background-size: 16px;
+  text-align: left;
+  border-radius: 36px;
+  font-weight: $font-weight-500;
+}
+
+.select-lang-dropdown {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  background: $footerLanguageDropdownBg;
+  box-shadow: 0px 1px 7px 1px $footerLanguageDropdownBoxShadow;
+  border-radius: 20px;
+  overflow: auto;
+  height: 255px;
+
+  @media (max-width: 992px) {
+    max-height: 310px;
+  }
+
+  li {
+    padding: 10px 20px 10px 14px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    font-weight: $font-weight-500;
+
+
+    &:hover,
+    &.active {
+      background: $footerLanguageDropdownLinksHoverBg;
+    }
+  }
+}
+
+// Welcome Offer 
+.promotion_welcome {
+  background: $allPromoWelcomeBgColor;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+
+  @media screen and(max-width: 767px) {
+    margin: 0 18px;
+    height: auto;
+  }
+
+  &--text {
+    // width: 165px;
+    height: 50px;
+    background: $allPromoWelcomeOfferBgColor;
+    line-height: 50px;
+    border-radius: 50px;
+
+
+
+    h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 50px;
+      font-weight: $font-weight-900;
+      color: $allPromoWelcomeOfferTextColor;
+      text-align: center;
+    }
+
+  }
+
+  &--details {
+    @media screen and(max-width: 767px) {
+      padding: 20px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 50px;
+      font-weight: $font-weight-900;
+      color: $allPromoWelcomeOfferDetailsColor;
+
+      @media screen and(max-width: 767px) {
+        line-height: 21px;
+        text-align: center;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.lang-country {
+
+  &-flag {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background: $footerLanguageCountryFlagBg;
+    border-radius: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 8px;
+
+    @media screen and(max-width: 1023px) {
+      position: relative;
+      top: -2px;
+    }
+
+    img {
+      width: 31px;
+      height: 31px;
+      vertical-align: top;
+    }
+  }
+
+  &-lang {
+    @media screen and(max-width: 1023px) {
+      width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      position: relative;
+      top: 4px;
+    }
+
+  }
+}
+
+@media screen and(max-width: 1023px) {
+
+  _::-webkit-full-page-media,
+  _:future,
+  :root .lang-country-lang {
+    top: 0;
+  }
+
+  _::-webkit-full-page-media,
+  _:future,
+  :root .lang-country-flag {
+    top: -1px;
+  }
+
+
+}
+
+.lang-country-text {
+  display: inline-block;
+  width: calc(100% - 60px);
+  vertical-align: middle;
+  color: $footerLanguageDropdownList;
+}
+
+// MoreGames & Search Games
+.more_games {
+  position: relative;
+  width: 350px;
+  @include moreGames_Search($moreGamesSearchBgClr, $moreGamesSearchBoxShadow, $moreGamesSearchHeadingClr, $moreGamesSearchBeforeBgClr);
+}
+
+// All Modal title 
+.h-modal--title {
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: 0;
+  font-weight: $font-weight-900;
+  font-size: 27px;
+  line-height: 30px;
+  color: $depositHamburgerModalTitleColor;
+}
+
+.subheading {
+  display: block;
+}
+
+// Logo for My Account Profile 
+.left_nav--logo {
+  width: 118px;
+  height: 71px;
+  margin: -20px 0 20px 0;
+  background: url('/assets/img/left_reg-logo.svg') no-repeat;
+
+  @media screen and(max-width: 992px) {
+    display: none;
+  }
+}
+
+// for Modal Preference style
+#completeProfile {
+  .site_modal.preferenceModal {
+
+    .preference_left--slider {
+
+
+      .left_nav--logo,
+      .icon-cancel,
+      .overlay {
+        display: none;
+      }
+
+      .preference_left--container {
+        overflow-y: visible;
+        height: auto;
+
+
+        &::before {
+          display: none;
+        }
+
+        .heading {
+          margin: 30px 0 0 0;
+        }
+
+        .prefer_btn {
+          width: 300px;
+        }
+
+        .preference-list {
+          border-color: $modalPrefferenceBorderClr;
+        }
+
+        .preference_left--content {
+          width: 100%;
+          background: none;
+          animation: none;
+        }
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,230 @@
+
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body,
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $Primary-Font;
+  font-weight: $font-weight-300;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $bodyColor;
+  background-color: $bodyBgColor;
+}
+
+p {
+  margin: 0 0 10px
+}
+
+a {
+  color: $commonLinkColor;
+  text-decoration: none;
+  &:active,
+  &:hover {
+    outline: 0;
+    color: $commonLinkHoverColor;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+hr {
+  height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid $commonHrEleBorderTop;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover {
+      color: inherit;
+    }
+
+    &:active {
+      color: inherit;
+    }
+
+
+    &:focus {
+      color: inherit;
+    }
+  }
+
+  // ----------- Column Visibility & Hidden Class Xl - LG - MD - SM - XS -----------//
+.visible-lg,
+.visible-md,
+.visible-sm,
+.visible-xs {
+  display: none !important;
+}
+
+// Visibility
+@media (min-width: $lg) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+@media (min-width: $md) and (max-width: $lg - 1px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: $sm) and (max-width: $md - 1px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (max-width: $sm - 1px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+// Hidden
+@media (min-width: $lg){
+  .visible-lg {
+    display: block !important;
+  }
+}
+@media (min-width: $md) and (max-width: $lg - 1px){
+  .visible-md {
+    display: block !important;
+  }
+}
+@media (min-width: $sm) and (max-width: $md - 1px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+@media (max-width: $sm - 1px) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.clearfix,
+.panel,
+.panel-body {
+
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}

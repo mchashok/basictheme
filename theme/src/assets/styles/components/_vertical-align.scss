@@ -1,0 +1,35 @@
+.middleAlignBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  
+  .middleAlign {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+.flex_verticalalign {
+  @include flexbox();
+  @include flexVerticalCenter();
+}
+
+.flex_justifyCenter {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+.flex_spacebetween {
+  @include flexbox();
+  @include flexVerticalCenter();
+  @include flexJustifyBetween();
+}
+
+.flex_horizontal-center {
+  @include flexbox();
+  @include flexVerticalCenter();
+  @include flexJustifyBetween();
+}

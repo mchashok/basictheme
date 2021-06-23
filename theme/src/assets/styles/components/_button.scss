@@ -1,0 +1,141 @@
+// Buttons sizes
+.site-btn {
+  @extend %defaultButton;
+
+  &--lg {
+    @include buttonSize();
+  }
+
+  &--xm {
+    @include buttonSize(17px, 180px, 60px, 60px);
+  }
+
+  &--md {
+    @include buttonSize(15px, 160px, 48px, 48px);
+  }
+
+  &--xs {
+    @include buttonSize(15px, 122px, 50px, 50px);
+  }
+}
+
+button.site-btn {
+  line-height: initial;
+}
+
+// Get button styles from '_config.scss' file and loop each button styles
+@each $buttonName,
+$buttonDetails in $buttonConfig {
+
+  $btnClass: null;
+
+  // Class name without prefix 'site-btn__'
+  @if map-get($buttonDetails, buttonNameWithoutPrefix)==true {
+    $btnClass: $buttonName;
+  }
+  @else {
+    $btnClass: 'site-btn__'+$buttonName;
+  }
+
+  .#{$btnClass} {
+    // Button Normal state theming
+    @include buttonTheme(
+      map-get($buttonDetails, background), map-get($buttonDetails, background-image),
+      map-get($buttonDetails, color), map-get($buttonDetails, border),
+      map-get($buttonDetails, box-shadow)
+    );
+
+    // Default Button styles enable
+    @if map-get($buttonDetails, defaultBtnStyles)==true {
+      @extend %defaultButton;
+    }
+
+    // Background pixel issue fix
+    @if map-get($buttonDetails, disableBgClip) !=true {
+      @include backgroundClip();
+    }
+
+    // Button progress hover
+    @if $btnClass=='primary' {
+      &.btn-progress:hover {
+        background: map-get($buttonDetails, background);
+        background-image: map-get($buttonDetails, background-image);
+      }
+    }
+
+    &:active,
+    &:hover,
+    &focus,
+    a {
+      color: map-get($buttonDetails, color);
+    }
+
+    // Button Active state theming
+    &.active {
+      @include buttonTheme(
+        map-get($buttonDetails, background-active), map-get($buttonDetails, background-active-image),
+        map-get($buttonDetails, color-active), map-get($buttonDetails, border-active),
+        map-get($buttonDetails, box-shadow-active), true
+      );
+    }
+
+    @media (min-width: 1024px) {
+      // Button Hover state theming
+      &:active,
+      &:hover,
+      &focus {
+        @include buttonTheme(
+          map-get($buttonDetails, background-hover), map-get($buttonDetails, background-hover-image),
+          map-get($buttonDetails, color-hover), map-get($buttonDetails, border-hover),
+          map-get($buttonDetails, box-shadow-hover), true
+        );
+
+        // Background pixel issue fix
+        @if map-get($buttonDetails, disableBgClip) !=true {
+          @include backgroundClip();
+        }
+      }
+    }
+  }
+
+  // Button Success state theming
+  .success {
+    color: map-get($buttonDetails, success-color);
+    pointer-events: none;
+  }
+}
+
+
+.pinkButton {
+  @extend .site-btn;
+  @extend .site-btn--lg;
+  @extend .site-btn__primary;
+}
+
+.pinkButtonSmall {
+  @extend .site-btn;
+  @extend .site-btn--xs;
+  @extend .site-btn__primary;
+}
+
+.transparentButton {
+  @extend .site-btn;
+  @extend .site-btn--lg;
+  @extend .site-btn__secondary;
+}
+
+.whiteButton {
+  @extend .site-btn;
+  @include buttonSize(20px, 300px, 80px, 90px, true, 0 25px);
+  @extend .site-btn__teritary;
+}
+
+.cnt_button_margin {
+  margin: 40px 0 0;
+  cursor: pointer;
+}
+
+.form-btn {
+  margin-top: 35px;
+  text-align: center;
+}

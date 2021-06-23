@@ -1,0 +1,504 @@
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+
+.fixed-scroll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.modal-open,
+.multi-modal-open {
+  overflow: hidden;
+  // position: fixed;
+  width: 100%;
+}
+
+.modal_smooth_open {
+  .fixed-scroll {
+    display: none;
+  }
+
+  .modal-open &,
+  .multi-modal-open & {
+    .fixed-scroll {
+      display: block;
+    }
+  }
+}
+
+modal {
+  display: none;
+}
+
+// Modal Wrapper
+.site_modal {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  // background: $siteModalBgColor;
+  background: $siteModalBgImg;
+  overflow: auto;
+
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $siteModalBgColor;
+    z-index: -1;
+  }
+
+  // Modal Header
+  &--header {
+    border-radius: 50px;
+    background: $siteModalHeaderBgColor;
+    padding: 8.5px 0;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 550px;
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+
+    span {
+      font-size: 13px;
+      padding: 8.5px;
+      font-weight: $font-weight-700;
+
+      @media (max-width: 768px) {
+        font-size: 10px;
+        padding: 0 0 0 4px;
+      }
+    }
+
+    // Register
+    &-light {
+      border: 4px solid $siteModalHeaderLightBorder;
+
+      span {
+        color: $siteModalHeaderListItemsLightColor;
+
+        &.active {
+          color: $siteModalHeaderListItemsLightActiveColor;
+        }
+      }
+    }
+
+    // Normal Flow
+    &-dark {
+      border: 4px solid $siteModalHeaderDarkBorder;
+
+      span {
+        color: $siteModalHeaderListItemsDarkColor;
+
+        &.active {
+          color: $siteModalHeaderListItemsDarkActiveColor;
+        }
+      }
+    }
+  }
+
+  // Modal Body
+  &--header+&--body {
+    margin-top: -25px;
+  }
+
+  &--body {
+    background: $siteModalBodyBgColor;
+    border-radius: 4px;
+    width: calc(100% - 30px);
+    padding: 0;
+    margin: 0 auto 0 auto;
+    box-shadow: $siteModalBodyBoxShadow;
+    position: relative;
+
+    &-large {
+      max-width: 655px;
+      min-height: 630px;
+    }
+
+    &-small {
+      min-height: 300px;
+      max-width: 445px;
+      text-align: center
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+
+      @media (max-width: 768px) {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+// Close Desktop Icon
+.icon-cancel-svg {
+  width: 40px;
+  height: 40px;
+  background: url("/assets/img/close_inactive.svg");
+  position: absolute;
+  top: 54px;
+  right: -20px;
+  cursor: pointer;
+  z-index: 9;
+
+  &:hover,
+  &:active {
+    background: url("/assets/img/close_active.svg");
+  }
+}
+.icon-cancel-info {
+  width: 40px;
+  height: 40px;
+  background: url("/assets/img/info-close.svg");
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+// Close Mobile Icon
+.mobile_modal_closeicon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+  color: $siteModalMobileCloseIconColor;
+  cursor: pointer;
+  z-index: 9;
+
+  i {
+    font-size: 12px;
+    font-weight: $font-weight-300;
+    line-height: 25px;
+    color: $siteModalMobileCloseIconColor;
+  }
+}
+
+// Deposit Hamburger Modal
+.h-modal {
+  $c: &; // Storing parent h-modal class in variable;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $depositHamburgerModalBgColor;
+  z-index: 999;
+  overflow: hidden;
+  display: none;
+
+  &__rightside {
+    float: right;
+    width: 100%;
+    max-width: 736px;
+    background: $depositHamburgerModalRightBgColor;
+    height: 100%;
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+
+  }
+
+  // Hamburger Header
+  &__header {
+    position: relative;
+    height: 55px;
+    &--inner {
+      height: 100%;
+      padding: 0px 20px 0;
+      z-index: 7;
+      background: $depositHamburgerModalHeaderBgColor;
+      text-align: center;
+      border-bottom: 1px solid $depositHamburgerModalHeaderBorderBottom;
+    }
+  }
+
+  &--goback {
+    float: left;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &--steps {
+    display: inline-block;
+
+    span {
+      color: $depositHamburgerModalStepsColor;
+      font-size: 13px;
+      font-weight: $font-weight-700;
+      padding: 0 10px;
+
+      &.active {
+        color: $depositHamburgerModalStepsActiveColor;
+      }
+    }
+  }
+
+  &--close {
+    float: right;
+    width: 22px;
+    height: 24px;
+    position: relative;
+  }
+
+  // Scroll Body
+  &__scroll {
+    overflow: auto;
+    padding-bottom: 100px;
+    @media (max-width: 992px) {
+      position: relative;
+    }
+    .ps__thumb-y {
+      display: none !important;
+    }
+
+  }
+
+  &__with_footer {
+    height: calc(100% - 155px);
+  }
+
+  &__without_footer {
+    height: calc(100% - 55px);
+  }
+
+  &__success {
+    background: $depositHamburgerModalSuccessBgColor;
+    padding: 25px 50px;
+
+    @media (max-width: 767px) {
+      padding: 25px 15px;
+    }
+
+    &--left-blk {
+      width: 80px;
+      float: left;
+    }
+
+    &--right-blk {
+      width: calc(100% - 120px);
+      float: left;
+    }
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      width: 61px;
+      height: 61px;
+      background: $depositHamburgerModalSuccessIconBgColor;
+      color: $depositHamburgerModalSuccessIconColor;
+      border-radius: 100px;
+    }
+
+    &--title {
+      font-size: 14px;
+      color: $depositHamburgerModalSuccessTitleColor;
+      margin: 0 0 5px 0;
+    }
+
+    &--desc {
+      font-size: 14px;
+      color: $depositHamburgerModalSuccessDescColor;
+      margin-bottom: 0;
+    }
+  }
+
+  // Hamburger Body
+  &__body {
+    max-width: 600px;
+    margin: 45px auto 0;
+  }
+
+  &--title {
+    font-size: 27px;
+    text-align: center;
+    margin: 0;
+    color: $depositHamburgerModalTitleColor;
+  }
+
+  &--innerbody {
+    padding: 0 20px;
+    margin-top: 40px;
+  }
+
+  &--sub-heading {
+    margin: 0 0 17px 0;
+    color: $depositHamburgerModalSubHeadingColor;
+  }
+
+  // Hamburger Footer
+  &__footer {
+    border-top: 1px solid $depositHamburgerModalFooterBorderTop;
+    height: 100px;
+    width: 100%;
+    background: $depositHamburgerModalFooterBgColor;
+    z-index: 7;
+    padding: 0 20px;
+  }
+
+  // Mobile fixed title
+  &--mobtitle {
+    display: none;
+  }
+  @media (max-width: 992px) {
+    &__mobile--fixed {
+      #{$c}--title {
+        display: none;
+      }
+      #{$c}--mobtitle {
+        display: block;
+        z-index: 9;
+        width: 100%;
+        padding: 23px 10px;
+        font-size: 20px;
+        background: $depositHamburgerModalMobTitleBgColor;
+        background-image: $depositHamburgerModalMobTitleBgImg;
+        color: $depositHamburgerModalMobTitleColor;
+        height: 70px;
+        @include transition(0.1s ease-in-out);
+      }
+      #{$c}__footer {
+        position: fixed;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.close-mark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 24px;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 9px;
+    height: 24px;
+    width: 1px;
+    background-color: $depositHamburgerModalCloseBgColor;
+    cursor: pointer;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.back-icon {
+  width: 30px;
+  height: 24px;
+}
+
+.back-arrow {
+  margin-top: 20px;
+  position: relative;
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 1px;
+    left: -1px;
+    background-color: $depositHamburgerModalBackArrowBgColor;
+  }
+  &:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 3.5px;
+  }
+  &:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: -3px;
+  }
+  span {
+    display: block;
+    width: 28px;
+    height: 1px;
+    background-color: $depositHamburgerModalBackArrowBgColor;
+    margin-top: 0.2px;
+    float: left;
+    margin-left: 1px;
+  }
+}
+
+
+
+// Trustly Modals
+.trustly_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $trustlyModalBgColor;
+  background-image: $trustlyModalBgImg;
+  z-index: 999;
+  display: none;
+  padding: 20px 0;
+  overflow-y: auto;
+
+  &.trustly_notify_modal {
+    background: $trustlyModalNotifyBgColor;
+    background-image: none;
+
+    .modal-popup-body {
+      max-width: 656px;
+    }
+  }
+
+  .middleAlignBlock {
+    width: 100%;
+  }
+
+  .modal-popup-body {
+    margin: 0 auto;
+    max-width: 500px;
+    background: $trustlyModalPopupBodyBgColor;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    width: 90%;
+  }
+}

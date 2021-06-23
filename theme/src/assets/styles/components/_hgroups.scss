@@ -1,0 +1,89 @@
+
+%hgroups {
+    line-height: 1.1;
+    color: inherit;
+    font-family: $Primary-Font;
+    font-weight: $font-weight-900;
+  }
+
+  @for $i from 1 through 6 {
+
+    h#{$i},
+    .h#{$i} {
+      @extend %hgroups;
+    }
+  }
+
+  %margin-hgroup {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  %margin-hgroup1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  @for $i from 4 through 6 {
+
+    h#{$i},
+    .h#{$i} {
+      @extend %margin-hgroup;
+    }
+  }
+
+  @for $i from 1 through 3 {
+
+    h#{$i},
+    .h#{$i} {
+      @extend %margin-hgroup1;
+    }
+  }
+
+
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $Primary-Font;
+  font-weight: $font-weight-900;
+}
+
+.h1,
+h1 {
+  font-size: 36px
+}
+
+.h2,
+h2 {
+  font-size: 30px
+}
+
+.h3,
+h3 {
+  font-size: 24px
+}
+
+.h4,
+h4 {
+  font-size: 18px
+}
+
+.h5,
+h5 {
+  font-size: 14px
+}
+
+.h6,
+h6 {
+  font-size: 12px
+}

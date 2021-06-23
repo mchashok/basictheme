@@ -1,0 +1,175 @@
+$buttonConfig: (
+  primary: (
+    background: $primaryBtnBgColor,
+    background-image: $primaryBtnBgImg,
+    background-hover: $primaryBtnBgColorHover,
+    background-hover-image: $primaryBtnBgImgHover,
+    border: $primaryBtnBorder,
+    color: $primaryBtnColor,
+    box-shadow: $primaryBtnBoxShadow,
+    color-hover: $primaryBtnColorHover,
+    box-shadow-hover: $primaryBtnBoxShadowHover
+
+  ),
+  secondary: (
+    background: $secondaryBtnBgColor,
+    color: $secondaryBtnColor,
+    border: $secondaryBtnBorder,
+    background-hover: $secondaryBtnBgColorHover,
+    color-hover: $secondaryBtnColorHover,
+    border-hover: $secondaryBtnBorderHover,
+    box-shadow-hover: $secondaryBtnBoxShadowHover
+  ),
+  teritary: (
+    background: $teritaryBtnBgColor,
+    color: $teritaryBtnColor,
+    border: none
+  ),
+  teritary-outline: (
+    background: $teritaryOutlineBtnBgColor,
+    color: $teritaryOutlineBtnColor,
+    border: $teritaryOutlineBorderColor,
+
+    background-hover: $teritaryOutlineBtnBgColorHover,
+  ),
+  cashierbtn: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $cahierCardCashierButtonBgColor,
+    color: $cahierCardCashierButtonColor,
+    border: $cahierCardCashierButtonBorder,
+    background-hover: $cahierCardCashierButtonBgHoverColor,
+    color-hover: $cahierCardCashierButtonHoverColor,
+    success-color: $cahierCardCashierButtonSuccessColor
+  ),
+  login-cta: (
+    buttonNameWithoutPrefix: true,
+    disableBgClip: true,
+    background: $mainHeaderLoginButtonBgColor,
+    color: $mainHeaderLoginButtonColor,
+    border: $mainHeaderLoginButtonBorder,
+    background-hover: $mainHeaderLoginButtonHoverBgColor,
+    color-hover: $mainHeaderLoginButtonHoverColor,
+    border-hover: $mainHeaderLoginButtonHoverBorder
+  ),
+  viewmyacbtn: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $mainHeaderUserInfoDropdownButtonBgColor,
+    color: $mainHeaderUserInfoDropdownButtonColor,
+    border: $mainHeaderUserInfoDropdownButtonBorder
+  ),
+  myaccount_card--btn: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $myAccountCardButtonBgColor,
+    color: $myAccountCardButtonColor,
+    border: $myAccountCardButtonBorder,
+    border-hover: $myAccountCardButtonHoverColor,
+  ),
+  setlimits_tabs: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $setLimitsTabsBgColor,
+    color: $setLimitsTabsColor,
+    border: $setLimitsTabsBorder,
+    background-hover: $setLimitsTabsHoverBgColor,
+    color-hover: $setLimitsTabsHoverColor,
+    border-hover: $setLimitsTabsHoverBorder,
+    background-active: $setLimitsTabsActiveBgColor,
+    color-active: $setLimitsTabsActiveColor,
+    border-active: $setLimitsTabsActiveBorder,
+  ),
+  setlimit_period_tabs: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $setLimitsPeriodTabsBgColor,
+    color: $setLimitsPeriodTabsColor,
+    border: $setLimitsPeriodTabsBorder,
+    background-hover: $setLimitsPeriodTabsHoverBgColor,
+    color-hover: $setLimitsPeriodTabsHoverColor,
+    background-active: $setLimitsPeriodTabsActiveBgColor,
+    color-active: $setLimitsPeriodTabsActiveColor,
+  ),
+  slots-mob_category--btn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    disableBgClip: true,
+    background: $slotsMobCategoryBtnBgColor,
+    color: $slotsMobCategoryBtnColor,
+    border: $slotsMobCategoryBorder
+  ),
+  pending_withdraw--cancelBtn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $pendingWithdrawCancelBtnBgColor,
+    color: $pendingWithdrawCancelBtnColor,
+    border: $pendingWithdrawCancelBtnBorder,
+    background-hover: $pendingWithdrawCancelBtnHoverBgColor,
+    color-hover: $pendingWithdrawCancelBtnHoverColor,
+  ),
+  header_search--results-btn: (
+    defaultBtnStyles: true,
+    disableBgClip: true,
+    buttonNameWithoutPrefix: true,
+    background: $mainHeaderSearchResultsButtonBgColor,
+    border: $mainHeaderSearchResultsButtonBorder,
+    color: $mainHeaderSearchResultsButtonColor,
+    background-hover: $mainHeaderSearchResultsButtonHoverBgColor,
+    background-hover-image: $mainHeaderSearchResultsButtonHoverBgImg,
+    color-hover: $mainHeaderSearchResultsButtonHoverColor,
+    border-hover: $mainHeaderSearchResultsButtonHoverBorder,
+  ),
+  squarebutton: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $betTransactionButtonBgColor,
+    border: $betTransactionButtonBorder,
+    color: $betTransactionButtonColor
+  ),
+  sticky_nav--menuBtn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $mobFooterStickyNavMenuBtnBgColor,
+    border: $mobFooterStickyNavMenuBtnBorder,
+    color: $mobFooterStickyNavMenuBtnColor
+  ),
+  sticky_nav--link_btn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $mobFooterStickyNavLinkBtnBgColor,
+    border: $mobFooterStickyNavLinkBtnBorder,
+    color: $mobFooterStickyNavLinkBtnColor,
+    box-shadow: $mobFooterStickyNavLinkBtnBoxShadow
+  ),
+  sticky_nav--login_btn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $mobFooterStickyNavLoginBtnColor,
+    border: $mobFooterStickyNavLoginBtnBorder,
+    color: $mobFooterStickyNavLoginBtnBgColor,
+    box-shadow: $mobFooterStickyNavLoginBtnBoxShadow
+  ),
+  search_results--button: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $slotGameMobSearchResultsBtnBgColor,
+    border: $slotGameMobSearchResultsBtnBorder,
+    color: $slotGameMobSearchResultsBtnColor
+  ),
+  mob_userInfo_details--btn: (
+    defaultBtnStyles: true,
+    buttonNameWithoutPrefix: true,
+    background: $mobMyAccHeaderWrapBtnBgColor,
+    border: $mobMyAccHeaderWrapBtnBorderColor,
+    color: $mobMyAccHeaderWrapBtnColor,
+    box-shadow: $mobMyAccHeaderWrapBtnBoxShadow
+  )
+);
+
+

@@ -1,0 +1,51 @@
+// Buttons
+%defaultButton {
+  font-weight: $font-weight-900;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  // align-items: center;
+  // justify-content: center;
+  text-transform: $buttonTextTransform;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+%cards {
+  border: 1px solid $cahierBonusCardBorder;
+  border-radius: 5px;
+  background-color: $cahierBonusCardBg;
+  box-shadow: 0 5px 10px 0 $cahierBonusCardBoxShadow;
+}
+
+%PseudoAfterFullCover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%gameoverlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $gamingWindowAfterBgColor;
+  z-index: 1;
+}
